@@ -1,19 +1,49 @@
-#include <iostream>
-using namespace std;
-int main() {
-    int a,b,c;
-    cout<<"Enter a value of a & b"<<endl;
-    cin>>a>>b;
-     try{
-        if(b==0)
-        throw b;
-        c= a/b ;
-        cout<<"\n Division is :"<<c;  
-        }
-        catch (int x){
-            cout<<"Division by zero is not possible";
-            cout<<"\n Error:"<<x;
-        }
-        cout<<"\n At the end of program main function ";
-    return 0;
+#include <iostream> 
+using namespace std; 
+// single  
+class person{ 
+    public: 
+    int age; 
+    string name; 
+}; 
+class student: public person{ 
+    public: 
+    int rollno; 
+}; 
+// multilayer 
+class grandparent{ 
+   public: 
+   int age; 
+   string name; 
+}; 
+ 
+class parent : public grandparent{ 
+public : 
+int property; 
+}; 
+class child : public parent{ 
+    public: 
+    float salary; 
+}; 
+int main() 
+{ 
+   person p1; 
+   student s1; 
+   grandparent g1; 
+   parent e1; 
+   child c1; 
+p1.age = 24; 
+p1.name = "Vicky"; 
+s1.rollno = 36; 
+g1.age = 48; 
+g1.name = "Shripati"; 
+e1.property = 90; 
+c1.salary = 23400.67; 
+cout<<"age:"<<p1.age<<endl; 
+cout<<"name:"<<p1.name<<endl; 
+cout<<"age of grandparent:"<<g1.age<<endl; 
+cout<<"rollno:"<<s1.rollno<<endl; 
+cout<<"property of parents:"<<e1.property<<endl; 
+cout<<"salary of child:"<<c1.salary<<endl; 
+return 0; 
 }
